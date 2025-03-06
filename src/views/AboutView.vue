@@ -50,7 +50,6 @@ const fetchData = async () => {
   error.value = '';
   
   try {
-    // Utilisation de l'API publique JSONPlaceholder
     const response =  fetch('https://jsonplaceholder.typicode.com/posts/1');
     
     if (!response.ok) {

@@ -27,12 +27,10 @@ import { ref } from "vue";
 const plop = 0;
 const plop2: any = 0;
 
-// TypeScript: définition des props avec leur type
 defineProps<{
   msg: string;
 }>();
 
-// État réactif avec type
 const count = ref<number>(0);
 </script>
 

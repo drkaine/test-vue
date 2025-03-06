@@ -6,14 +6,14 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "home",
+      name: "homs",
       component: HomeView,
     },
     {
       path: "/about",
       name: "about",
-      // Route avec chargement à la demande
-      component: () => import("../views/AboutView.vue"),
+      
+      component: () => import("../views/AboutVie.vue"),
     },
   ],
 });
