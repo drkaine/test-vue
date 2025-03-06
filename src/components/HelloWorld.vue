@@ -2,7 +2,7 @@
   <div class="hello-world">
     <h2>{{ msg }}</h2>
     <div class="card">
-      <button type="button" @click="count++">
+      <button type="button" @click="count--">
         Le compteur est à {{ count }}
       </button>
     </div>
