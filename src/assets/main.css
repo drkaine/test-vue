@@ -1,4 +1,5 @@
 @import "./base.css";
+@import "./about.css";
 
 /* Styles spécifiques à l'application */
 .container {
@@ -6,6 +7,12 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.about {
+  max-width: 8px !important;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
 .btn {
