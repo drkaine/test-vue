@@ -1,8 +1,8 @@
 <template>
   <header>
     <nav>
-      <RouterLink to="/">Accueil</RouterLink>
-      <RouterLink to="/about">À propos</RouterLink>
+      <RouterLink to="/"> Accueil </RouterLink>
+      <RouterLink to="/about"> À propos </RouterLink>
     </nav>
   </header>
 
@@ -12,11 +12,11 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <style>
-@import './assets/base.css';
+@import "./assets/base.css";
 
 #app {
   max-width: 1280px;
@@ -63,4 +63,4 @@ nav a:first-of-type {
     font-size: 1.1rem;
   }
 }
-</style> 
+</style>

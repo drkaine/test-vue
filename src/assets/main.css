@@ -1,4 +1,4 @@
-@import './base.css';
+@import "./base.css";
 
 /* Styles spécifiques à l'application */
 .container {
@@ -41,4 +41,4 @@
   .hide-mobile {
     display: none;
   }
-} 
+}

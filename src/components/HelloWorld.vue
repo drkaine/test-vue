@@ -2,7 +2,9 @@
   <div class="hello-world">
     <h2>{{ msg }}</h2>
     <div class="card">
-      <button type="button" @click="count++">Le compteur est à {{ count }}</button>
+      <button type="button" @click="count++">
+        Le compteur est à {{ count }}
+      </button>
     </div>
     <p class="mt-4">
       Consultez
@@ -14,18 +16,24 @@
       <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>
     </p>
   </div>
+
+  <Hello />
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import Hello from "./Hello.vue";
+import { ref } from "vue";
+
+const plop = 0;
+const plop2: any = 0;
 
 // TypeScript: définition des props avec leur type
 defineProps<{
-  msg: string
-}>()
+  msg: string;
+}>();
 
 // État réactif avec type
-const count = ref<number>(0)
+const count = ref<number>(0);
 </script>
 
 <style scoped>
@@ -65,4 +73,4 @@ a {
   margin: 0 0.5rem;
   font-weight: 500;
 }
-</style> 
+</style>

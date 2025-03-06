@@ -4,6 +4,7 @@
 - Vue 3 (dernière version)
 - TypeScript
 - ESLint pour la qualité du code
+- Prettier pour le formatage du code
 - Vite comme outil de build
 
 ## Architecture
@@ -34,9 +35,14 @@
 - Fichiers TypeScript avec extension .ts
 - Nommage en PascalCase pour les composants
 - Nommage en camelCase pour les fonctions et variables
+- Formatage automatique du code avec Prettier
+  - Utilisation de point-virgule
+  - Guillemets simples pour les chaînes de caractères
+  - Largeur de ligne limitée à 100 caractères
+  - Tabulation de 2 espaces
 
 ## Workflow de Développement
 - TDD (Test-Driven Development)
 - Pair Programming
 - Mobile-first pour le développement UI
-- Respect des règles ESLint 
+- Respect des règles ESLint et Prettier 

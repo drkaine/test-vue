@@ -28,6 +28,9 @@ npm run preview
 # Linter
 npm run lint
 
+# Run lint prettier and build
+npm run clean
+
 # Tests
 npm run test            # Exécuter tous les tests
 npm run test:watch      # Mode watch
