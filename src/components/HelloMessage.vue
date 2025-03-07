@@ -6,9 +6,9 @@
     <button @click="resetName()">Réinitialiser</button>
     <p v-highlight>Texte important</p>
     <ul>
-      <!-- <li v-for="(item, index) in items" :key="index">
+      <li v-for="(item, index) in items" :key="index">
         {{ item }}
-      </li> -->
+      </li>
     </ul>
     <p>Nom en majuscules: {{ uppercaseName() }}</p>
   </div>
@@ -35,8 +35,7 @@ const uppercaseName = () => {
   return hello.name.toUpperCase();
 };
 
-// Uncomment if needed:
-// const items = ["Item 1", "Item 2", "Item 3"];
+const items = ["Item 1", "Item 2", "Item 3"];
 </script>
 
 <style scoped>
