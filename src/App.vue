@@ -3,6 +3,8 @@
     <nav>
       <RouterLink to="/"> Accueil </RouterLink>
       <RouterLink to="/about"> À propos </RouterLink>
+      <RouterLink to="/product"> Produits </RouterLink>
+      <RouterLink to="/cat"> Chat </RouterLink>
     </nav>
   </header>
 
