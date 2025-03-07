@@ -1,12 +1,14 @@
 <template>
   <div class="hello">
     <p>Bonjour {{ hello.name }} !</p>
-    <input v-model="name" placeholder="Entrez un nom" />
-    <button v-on:clicks="updateName()">Mettre à jour</button>
-    <button @click="resetName">Réinitialiser</button>
+    <input v-model="hello.name" placeholder="Entrez un nom" />
+    <button @click="updateName()">Mettre à jour</button>
+    <button @click="resetName()">Réinitialiser</button>
     <p v-highlight>Texte important</p>
     <ul>
-      <li v-for="item in items">{{ item }}</li>
+      <!-- <li v-for="(item, index) in items" :key="index">
+        {{ item }}
+      </li> -->
     </ul>
     <p>Nom en majuscules: {{ uppercaseName() }}</p>
   </div>
@@ -18,21 +20,23 @@ import { reactive } from "vue";
 
 const hello = reactive<Hello>({
   name: "John",
+  age: 25,
 });
 
-console.log(counter);
-
-const greeting = "Hello";
-
 const updateName = () => {
-  hello = { name: "Nouveau nom", age: 25 };
-}
+  hello.name = "Nouveau nom";
+};
+
+const resetName = () => {
+  hello.name = "John";
+};
 
 const uppercaseName = () => {
   return hello.name.toUpperCase();
-}
+};
 
-const items = ["Item 1", "Item 2", "Item 3"];
+// Uncomment if needed:
+// const items = ["Item 1", "Item 2", "Item 3"];
 </script>
 
 <style scoped>
@@ -56,7 +60,7 @@ input {
 
 button {
   padding: 0.5rem;
-  colr: white;
+  color: white;
   background-color: #42b983;
   border: none;
   border-radius: 4px;

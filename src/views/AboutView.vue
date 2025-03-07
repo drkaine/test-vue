@@ -19,15 +19,17 @@
       <div v-else class="data-container">
         <h3>{{ apiData.title }}</h3>
         <p>{{ apiData.body }}</p>
-        <p class="data-meta">Post ID: {{ apiData.id }} | User ID: {{ apiData.userId }}</p>
+        <p class="data-meta">
+          Post ID: {{ apiData.id }} | User ID: {{ apiData.userId }}
+        </p>
       </div>
-      <button @click="fetchData" class="refresh-btn">Rafraîchir</button>
+      <button class="refresh-btn" @click="fetchData">Rafraîchir</button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from "vue";
 
 interface Post {
   userId: number;
@@ -39,28 +41,30 @@ interface Post {
 const apiData = ref<Post>({
   userId: 0,
   id: 0,
-  title: '',
-  body: ''
+  title: "",
+  body: "",
 });
 const loading = ref<boolean>(true);
-const error = ref<string>('');
+const error = ref<string>("");
 
 const fetchData = async () => {
   loading.value = true;
-  error.value = '';
-  
+  error.value = "";
+
   try {
-    const response =  fetch('https://jsonplaceholder.typicode.com/posts/1');
-    
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/posts/1",
+    );
+
     if (!response.ok) {
       throw new Error(`Erreur HTTP: ${response.status}`);
     }
-    
-    const data =  response.json();
+
+    const data = await response.json();
     apiData.value = data;
   } catch (err) {
-    error.value = err instanceof Error ? err.message : 'Erreur inconnue';
-    console.error('Erreur lors de l\'appel API:', err);
+    error.value = err instanceof Error ? err.message : "Erreur inconnue";
+    console.error("Erreur lors de l'appel API:", err);
   } finally {
     loading.value = false;
   }
@@ -122,4 +126,4 @@ ul {
 .refresh-btn:hover {
   background-color: var(--color-primary-light);
 }
-</style> 
+</style>

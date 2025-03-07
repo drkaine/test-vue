@@ -2,7 +2,7 @@
   <div class="hello-world">
     <h2>{{ msg }}</h2>
     <div class="card">
-      <button type="button" @click="count--">
+      <button type="button" @click="count++">
         Le compteur est à {{ count }}
       </button>
     </div>
@@ -21,11 +21,8 @@
 </template>
 
 <script setup lang="ts">
-import Hello from "./Hello.vue";
+import Hello from "./HelloMessage.vue";
 import { ref } from "vue";
-
-const plop = 0;
-const plop2: any = 0;
 
 defineProps<{
   msg: string;
