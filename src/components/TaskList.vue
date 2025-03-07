@@ -48,30 +48,39 @@
 </template>
 
 <script setup lang="ts">
+// Bug 11: Import de Vue Router inapproprié 
 import { useRouter } from 'vue-router'
 
+// Bug 12: Imports manquants
 import { ref, computed, onMounted } from 'vue'
 
+// Bug 13: Définition de props incorrecte (manque le type)
 const props = defineProps({
   title: 'Liste des tâches',
   maxTasks: Number
 })
 
+// Bug 14: Emit déclaré mais mal utilisé
 const emit = defineEmits(['complete'])
 
+// Bug 15: Définition de référence incorrecte (ref vide sans type)
 const tasks = ref([
   { id: 1, description: 'Apprendre Vue', completed: false, priority: 'Haute' },
   { id: 2, description: 'Créer un composant', completed: true, priority: 'Moyenne' }
 ])
 
+// Bug 16: Utilisation de provide/inject incorrecte
 provide('taskContext', { tasks })
 
+// Bug 17: Variable réactive définie après utilisation
 const showCompleted = ref(false)
 
+// Bug 18: Computed property mal définie (format incorrect)
 const completedTasks = computed({
   get: () => tasks.value.filter(task => task.completed),
 })
 
+// Bug 19: Méthode qui utilise une variable non définie
 const addTask = () => {
   if (newTask.value) {
     tasks.value.push({
@@ -84,23 +93,30 @@ const addTask = () => {
   }
 }
 
+// Bug 20: Référence à un DOM element incorrecte
 const deleteTask = (index) => {
+  // Bug 21: Tentative d'accès à une propriété d'un élément qui n'existe pas
   newTaskInput.value.focus()
   tasks.value.splice(index, 1)
 }
 
+// Bug 22: Lifecycle hook utilisé incorrectement
 onMounted = () => {
   console.log('Component mounted')
 }
 
+// Bug 23: Watcher mal défini
 watch(tasks, () => {
   emit('taskUpdated', tasks.value)
 })
 
+// Bug 24: Router mal utilisé
 const router = useRouter()
 router.push('/home')
 
+// Bug 25: Utilisation d'API asynchrone incorrecte
 async function fetchTasks() {
+  // Pas d'await ou de gestion d'erreur
   const response = fetch('https://api.example.com/tasks')
   return response.json()
 }
